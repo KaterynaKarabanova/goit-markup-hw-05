@@ -10,6 +10,8 @@
     --background-activity: #E5E5E5;
     --lite-slate :#8E8F99;
     --green: #31D0AA;
+    --transition-duration-250: 250ms;
+    --transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 h1,
@@ -105,6 +107,7 @@ nav,
     letter-spacing: 0.02em;
     text-decoration: none;
     padding: 24px 0;
+    
 }
 
 
@@ -118,7 +121,9 @@ nav,
 .navigation-link:hover {
     color: var(--button-blue-active-ocean);
 }
-
+.navigation-link:active {
+    
+}
 .navigation-link:focus {
     color: var(--button-blue-active-ocean);
 
