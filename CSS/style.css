@@ -111,12 +111,12 @@ nav,
     text-decoration: none;
     padding: 24px 0;
     position: relative;
-    /* transition: color var(--transition-duration-250) var(--transition-timing-function); */
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1)
     
 }
 .navigation-link::after {
+    
     content: "";
-    display: block;
     position: absolute;
     left: 0;
     bottom: -1px;
@@ -410,7 +410,7 @@ margin-left: auto;
     align-items: center;
     justify-content: center;
     padding: 16px 32px;
-    transition: color var(--transition-duration-250) var(--transition-timing-function), border var(--transition-duration-250) var(--transition-timing-function);
+    transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1),  color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .customer-link:hover{
     border: 1px solid var(--button-blue-active-ocean);
@@ -511,7 +511,7 @@ margin-left: auto;
     height: 100%;
     width: 100%;
     background-color:  rgba(46, 47, 66, 0.40);
-    transition: opacity var(--transition-duration-250) var(--transition-timing-function);
+transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1), visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
 }
 .backdrop.is-hidden {
@@ -633,10 +633,10 @@ margin-left: auto;
         color: var(--background-cloud);
 }
 .overlay:hover .overlay-text {
-    transform: translate(0, 0);
+transform: translateY(0%);
 }
 .overlay:focus .overlay-text {
-    transform: translate(0, 0);
+    transform: translateY(0%);
 }
 .portfolio-all-list {
     display: flex;
