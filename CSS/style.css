@@ -103,17 +103,28 @@ nav,
     
 }
 .navigation-link {
-    color: var(--background-navy);
+    color: var(--button-blue-active-ocean);
     font-weight: 500;
     font-size: 16px;
     line-height: 1.5;
     letter-spacing: 0.02em;
     text-decoration: none;
     padding: 24px 0;
+    position: relative;
     /* transition: color var(--transition-duration-250) var(--transition-timing-function); */
     
 }
-
+.navigation-link::after {
+    content: "";
+    display: block;
+    position: absolute;
+    left: 0;
+    bottom: -1px;
+    height: 4px;
+    background-color: var(--button-blue-active-ocean);
+    border-radius: 2px;
+    transition: color var(--transition-duration-250) var(--transition-timing-function);
+}
 
 .navigation-list:not(:first-child) {
     gap: 40px;
@@ -351,6 +362,7 @@ margin-left: auto;
     gap: 24px;
     margin-top: 8px;
 }
+
 .icon-link {
     width: 40px;
     height: 40px;
@@ -398,7 +410,7 @@ margin-left: auto;
     align-items: center;
     justify-content: center;
     padding: 16px 32px;
-    transition: color var(--transition-duration-250) var(--transition-timing-function), border var(--transition-duration-250) var(--transition-timing-function);;
+    transition: color var(--transition-duration-250) var(--transition-timing-function), border var(--transition-duration-250) var(--transition-timing-function);
 }
 .customer-link:hover{
     border: 1px solid var(--button-blue-active-ocean);
@@ -496,9 +508,10 @@ margin-left: auto;
     position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
     height: 100%;
-    background-color:  rgba(46, 47, 66, 0.40);;
+    width: 100%;
+    background-color:  rgba(46, 47, 66, 0.40);
+    transition: opacity var(--transition-duration-250) var(--transition-timing-function);
 
 }
 .backdrop.is-hidden {
@@ -513,34 +526,39 @@ margin-left: auto;
     left: 50%;
     transform: translate(-50%,-50%);
     width: 408px;
-    height: 584px;
+    min-height: 584px;
+    border-radius: 4px;
     background-color: ;
     background: var(--dairy, #FCFCFC);
         box-shadow: 0px 2px 1px 0px rgba(0, 0, 0, 0.20), 0px 1px 3px 0px rgba(0, 0, 0, 0.12), 0px 1px 1px 0px rgba(0, 0, 0, 0.14);
+        transition: transform var(--transition-duration-250) var(--transition-timing-function);
 }
 
 .modal-close-btn {
     position: absolute;
-    top: 32px;
-    right: 32px;
+    top: 24px;
+    right: 24px;
     display: flex;
     width: 24px;
     height: 24px;
     padding: 0;
     justify-content: center;
-    align-content: center;
-    border-radius: 24px;
+    align-items: center;
+    border-radius: 50%;
         border: 1px solid rgba(0, 0, 0, 0.10);
         background: var(--background-cornflower);
-        transition:background-color var(--transition-duration-250) var(--transition-timing-function) ;
+        transition:background-color var(--transition-duration-250) var(--transition-timing-function), border var(--transition-duration-250) var(--transition-timing-function) ;
 
 }
 .modal-close-btn:hover,:focus {
-    background-color: var(--button-blue-active-ocean)
+    background-color: var(--button-blue-active-ocean);
+    border:none;
 }
 .modal-close-btn-icon {
+    fill: black;
     transition: fill var(--transition-duration-250) var(--transition-timing-function);
-}   
+} 
+
 .modal-close-btn:hover .modal-close-btn-icon,
 .modal-close-btn:focus .modal-close-btn-icon{
     fill: var(--base-white);
@@ -570,7 +588,8 @@ margin-left: auto;
     border-radius: 4px;
     border: 1px solid var(--background-cornflower);
     padding: 12px 24px;
-transition: background-color var(--transition-duration-250) var(--transition-timing-function),color var(--transition-duration-250) var(--transition-timing-function),border var(--transition-duration-250) var(--transition-timing-function), box-shadow var(--transition-duration-250) var(--transition-timing-function);
+    transition: background-color var(--transition-duration-250) var(--transition-timing-function),color var(--transition-duration-250) var(--transition-timing-function), border-color var(--transition-duration-250) var(--transition-timing-function), box-shadow var(--transition-duration-250) var(--transition-timing-function);
+   
 }
 
 .portfolio-list li:not(:last-child) {
@@ -581,7 +600,7 @@ transition: background-color var(--transition-duration-250) var(--transition-tim
 .portfolio-button:hover {
     color: var(--base-white);
     background-color: var(--button-blue-active-ocean);
-    border: 1px solid transparent;
+    border-color: transparent;
     box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.12), 0px 2px 1px 0px rgba(0, 0, 0, 0.08), 0px 3px 1px 0px rgba(0, 0, 0, 0.10);
 }
 
@@ -605,18 +624,18 @@ transition: background-color var(--transition-duration-250) var(--transition-tim
     transform: translate(0, 100%);
     transition: transform var(--transition-duration-250) var(--transition-timing-function);
     background-color: var(--button-blue-iris);
-    padding-top: 40px;
-    padding-left: 32px;
-    padding-right: 32px;
+    padding: 40px 32px;
 
     font-size: 16px;
         font-family: Roboto;
-        line-height: 1,5;
+        line-height: 1.5;
         letter-spacing: 0.32px;
         color: var(--background-cloud);
 }
-.overlay:hover .overlay-text,
-.overlay:focus .overlay-text{
+.overlay:hover .overlay-text {
+    transform: translate(0, 0);
+}
+.overlay:focus .overlay-text {
     transform: translate(0, 0);
 }
 .portfolio-all-list {
