@@ -124,8 +124,17 @@ nav,
     height: 4px;
     background-color: var(--button-blue-active-ocean);
     border-radius: 2px;
-    transition: color var(--transition-duration-250) var(--transition-timing-function);
+    opacity: 0;
+    transition: opacity var(--transition-duration-250) var(--transition-timing-function);
 }
+
+
+
+
+.navigation-link:active::after
+  {
+    opacity: 1;
+  }
 
 .navigation-list:not(:first-child) {
     gap: 40px;
@@ -675,7 +684,7 @@ transform: translateY(0%);
     text-decoration: none;
     display: block;
     transition: box-shadow var(--transition-duration-250) var(--transition-timing-function);
-     transition: transform  var(--transition-duration-250) var(--transition-timing-function);
+    
 }
 .portfolio-all-link:hover {
     box-shadow: 0px 2px 1px 0px rgba(46, 47, 66, 0.08), 0px 1px 1px 0px rgba(46, 47, 66, 0.16), 0px 1px 6px 0px rgba(46, 47, 66, 0.08);
