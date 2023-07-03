@@ -103,7 +103,7 @@ nav,
     
 }
 .navigation-link {
-    color: var(--button-blue-active-ocean);
+    color: var(--background-navy);
     font-weight: 500;
     font-size: 16px;
     line-height: 1.5;
@@ -112,7 +112,14 @@ nav,
     padding: 24px 0;
     position: relative;
     transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  
+}
+.navigation-link:hover,
+.navigation-link:focus
+{
+   color:var(--button-blue-active-ocean);
+}
+.nav-active{
+    color: var(--button-blue-active-ocean);
 }
 .nav-active::after {
     display: block;
@@ -126,9 +133,6 @@ nav,
     border-radius: 2px;  
     transition: width 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-
-
-
 .navigation-list:not(:first-child) {
     gap: 40px;
 }
@@ -136,11 +140,6 @@ nav,
     margin-right: 0;
 }
 
-.navigation-link:hover,
-.navigation-link:focus,
-  {
-    color: var(--button-blue-active-ocean); 
-}
 
 
 /* address*/
