@@ -112,9 +112,9 @@ nav,
     padding: 24px 0;
     position: relative;
     transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-    
+  
 }
-.navigation-link::after {
+.nav-active::after {
     display: block;
     content: "";
     position: absolute;
@@ -123,18 +123,11 @@ nav,
     width: 100%;
     height: 4px;
     background-color: var(--button-blue-active-ocean);
-    border-radius: 2px;
-    opacity: 0;
-    transition: opacity var(--transition-duration-250) var(--transition-timing-function);
+    border-radius: 2px;  
+    transition: width 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 
-
-
-.navigation-link:active::after
-  {
-    opacity: 1;
-  }
 
 .navigation-list:not(:first-child) {
     gap: 40px;
@@ -144,7 +137,8 @@ nav,
 }
 
 .navigation-link:hover,
-.navigation-link:focus   {
+.navigation-link:focus,
+  {
     color: var(--button-blue-active-ocean); 
 }
 
@@ -187,9 +181,8 @@ button {
     max-width: 1440px;
     max-height: 600px;
     display: block;
-    margin: auto;
-    /* margin-left: auto;
-    margin-right: auto; */
+    margin: 0 auto;
+    
     background-image: linear-gradient( rgba(46, 47, 66, 0.70), rgba(46, 47, 66, 0.70)),  url(../images/people-office.jpg); 
     background-repeat: no-repeat;
     background-position: center;
